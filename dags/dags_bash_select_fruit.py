@@ -11,12 +11,12 @@ with DAG(
     
     t1_orange = BashOperator(
         task_id="t1_orange",
-        bash_command="/opt/airflow/plugins/shell/select_fruit.sh ORANGE", # 워커 컨테이너의 경로
+        bash_command="sh /opt/airflow/plugins/shell/select_fruit.sh ORANGE", # 워커 컨테이너의 경로
     )
 
     t2_avocado = BashOperator(
         task_id="t2_avocado",
-        bash_command="/opt/airflow/plugins/shell/select_fruit.sh AVOCADO", # 워커 컨테이너의 경로
+        bash_command="sh /opt/airflow/plugins/shell/select_fruit.sh AVOCADO", # 워커 컨테이너의 경로
     )
 
     t1_orange >> t2_avocado
