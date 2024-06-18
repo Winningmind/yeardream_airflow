@@ -25,7 +25,7 @@ with DAG(
         if code is not None and code == 'INFO-200':
             print('상태코드: INFO-200, 데이터 미갱신')
             return False
-        elif code is None:
+        elif code is None: # 정상일때
             keys = list(contents.keys())
             rslt_code = contents.get(keys[0]).get('RESULT').get('CODE')
 
